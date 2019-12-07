@@ -91,7 +91,7 @@
 						}
 					}
 					this.$set(item, 'price_now', data.price);
-					if (data.price < item.price_wait && item.arrow === 'down') {
+					if (data.price <= item.price_wait && item.arrow === 'down') {
 						audioDown.play();
 						this.$set(item, 'bomb', true)
 						this.updateItems();
