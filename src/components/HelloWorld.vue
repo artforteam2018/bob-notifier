@@ -1,17 +1,17 @@
 <template>
-  <div class="mx-5 my-5">
+  <div class="mx-5 my-5" style="height: 100vh;">
     <div class="d-flex align-center justify-space-between mb-3">
       <v-btn outlined @click="add = !add" color="primary">Добавить монету</v-btn>
       <v-icon class="mx-2" :color="connection ? 'green' : 'red'">wifi_tethering</v-icon>
     </div>
-    <v-card>
+    <v-card style="overflow-y: auto; height: 100%;">
 
-      <v-data-table
+      <v-data-table style="height: 100%;"
         :headers="headers"
         :items="items"
       >
         <template v-slot:item="{ item }">
-          <tr :class="getColor(item)">
+          <tr :class="getColor(item)" style="background: black !important">
             <td>{{ item.symbol }}</td>
             <td>{{ item.price_wait }}</td>
             <td>{{ item.price_now }}</td>

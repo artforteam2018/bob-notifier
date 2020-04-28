@@ -12,7 +12,7 @@ module.exports = class {
     const client = this.Binance({
     });
 
-    this.symbols = Object.keys(await client.allBookTickers()).filter(curr => curr.match(/.*BTC$/g));
+    this.symbols = Object.keys(await client.allBookTickers()).filter(curr => curr.match(/.*(BTC)|(USDT)$/g));
     this.helper.sendSymbols('binance', this.symbols);
 
     client.ws.trades(this.symbols, trade => {
